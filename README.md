@@ -40,6 +40,11 @@ This is a food delivery web application built using Next.js. The app provides us
 - **Backend:** Next.js API Routes, Prisma (PostgreSQL database)
 - **Payment Processing:** Stripe
 
+### Desgin
+## System architecture
+
+
+### Impelementation
 ## Project Structure
 
 ```plaintext
