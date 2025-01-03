@@ -47,7 +47,9 @@ This is a food delivery web application built using Next.js. The app provides us
 ![usecase digram drawio](https://github.com/user-attachments/assets/5de4965b-41a4-4ee7-b0e0-a86077426517)
 ## Sequence Diagram 
 ![sqance digram drawio](https://github.com/user-attachments/assets/988bc34b-4219-4702-a4d0-6d3915969ebb)
-
+## class Diagram
+![class digram drawio](https://github.com/user-attachments/assets/e0a414ee-a856-426e-af6e-770e051a633c)
+ 
 
 ### Impelementation
 ## Project Structure
