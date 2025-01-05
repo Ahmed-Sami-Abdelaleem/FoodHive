@@ -2,14 +2,15 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Heart,
+  Bell,
+  HandPlatter,
   History,
-  Home,
   LogIn,
   LogOut,
   Menu,
   MessageCircle,
-  Plus,
+  NotepadText,
+  Search,
   User,
   X,
 } from "lucide-react";
@@ -21,7 +22,7 @@ export const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Mock authenticated state - replace with your auth logic
+  // Mock authenticated state - replace with your auth logic <HandPlatter />
 
   const user = {
     name: "John Doe",
@@ -29,11 +30,15 @@ export const Header = () => {
   };
 
   const tabs = [
-    { id: "forSell", label: "For Sell", onClick: () => router.push("/") },
-    { id: "forRent", label: "For Rent", onClick: () => router.push("/rent") },
-    { id: "wishlist", label: "Wishlist", icon: Heart },
+    { id: "Home", label: "Home", onClick: () => router.push("/") },
+    {
+      id: "BestSeller",
+      label: "BestSeller",
+      onClick: () => router.push("/rent"),
+    },
+    { id: "Services", label: "Services" },
     { id: "messages", label: "Message", icon: MessageCircle },
-    { id: "agent", label: "Agent", icon: User },
+    { id: "Menu", label: "Menu", icon: NotepadText },
   ];
 
   const menuItems = [
@@ -68,24 +73,24 @@ export const Header = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Left section: Logo, App Name, and Navigation */}
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <div className="flex items-center space-x-4">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Home className="h-8 w-8 text-blue-600" />
+                  <HandPlatter className="h-8 w-8 text-blue-600" />
                 </motion.div>
                 <motion.h1
                   className="text-2xl font-bold text-blue-600"
                   whileHover={{ scale: 1.05 }}
                 >
-                  Taklok
+                  FoodHive
                 </motion.h1>
               </div>
 
               {/* Navigation Tabs */}
-              <nav className="hidden md:flex ml-8">
+              <nav className="hidden md:flex ml-8 ">
                 <div className="relative flex space-x-8">
                   {tabs
                     .filter(
@@ -124,14 +129,19 @@ export const Header = () => {
             {/* Right section: Action Buttons */}
             <div className="flex items-center space-x-4">
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-blue-600 text-white px-4 py-2 rounded-md flex items-center space-x-2 text-sm font-medium hover:bg-blue-700 transition-colors"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1 }}
+                className=" text-black p-2 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
               >
-                <Plus className="h-4 w-4" />
-                <span>Post Your Ad</span>
+                <Search className="h-5 w-5" />
               </motion.button>
-
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 1 }}
+                className=" text-black p-2 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+              >
+                <Bell className="h-5 w-5" />
+              </motion.button>
               {false ? (
                 <>
                   {/* Mobile Menu Button */}
